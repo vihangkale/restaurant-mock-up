@@ -15,12 +15,19 @@ function App() {
   return (
     <div className="App">
       <NavigationBar />
-      <Container maxWidth="xl" mt={30} sx={{ height: "100vh" }}>
+      <Container
+        maxWidth="xl"
+        maxWidth="lg"
+        mt={30}
+        sx={{ height: "calc(100vh - 53px)" }}
+      >
         <Grid
           container
           spacing={2}
-          mt={9}
-          sx={{ height: "inherit", px: { xs: 1, sm: 5, md: 5, lg: 6, xl: 6 } }}
+          alignItems="center"
+          justifyContent="center"
+          spacing={{ xs: 10 }}
+          sx={{ height: "inherit" }}
         >
           <Slide
             direction="right"
@@ -69,7 +76,13 @@ function App() {
                 <Box
                   component="img"
                   sx={{
-                    height: "50vh",
+                    height: {
+                      xs: "50vh",
+                      sm: "60vh",
+                      md: "60vh",
+                      lg: "60vh",
+                      xl: "60vh",
+                    },
                     width: "100%",
                     objectFit: "cover",
                     // maxHeight: { xs: 233, md: 167 },
@@ -93,12 +106,7 @@ function App() {
       </Container>
       <Tag
         name="Hydrabad"
-        icon={
-          <LocationOnIcon
-            className="locationTagImage"
-            sx={{ color: "#fff !important" }}
-          />
-        }
+        icon={<LocationOnIcon sx={{ color: "#fff !important" }} />}
         sx={{ fontSize: "1.2rem !important" }}
       />
     </div>

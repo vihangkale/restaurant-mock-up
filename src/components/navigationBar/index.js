@@ -41,7 +41,6 @@ const NavigationBar = () => {
       <AppBar
         position="static"
         sx={{
-          background: "#fff5ec",
           color: "#2e266f",
           boxShadow: "none",
           px: { xs: 1, sm: 5, md: 5, lg: 6, xl: 6 },
@@ -93,19 +92,19 @@ const NavigationBar = () => {
 
             <Box sx={{ flexGrow: 0 }}>
               <Stack direction="row" spacing={0.1}>
-                <Tooltip title="Profile">
-                  <SimpleBadge>
-                    <IconButton
-                      //onClick={handleOpenUserMenu}
-                      sx={{ p: 0 }}
-                    >
-                      <Avatar
-                        alt="Remy Sharp"
-                        src="https://source.unsplash.com/random/?profile"
-                      />
-                    </IconButton>
-                  </SimpleBadge>
-                </Tooltip>
+                {/* <Tooltip title="Profile"> */}
+                <SimpleBadge>
+                  <IconButton
+                    //onClick={handleOpenUserMenu}
+                    sx={{ p: 0 }}
+                  >
+                    <Avatar
+                      alt="Remy Sharp"
+                      src="https://source.unsplash.com/random/?profile"
+                    />
+                  </IconButton>
+                </SimpleBadge>
+                {/* </Tooltip> */}
                 <FormControl size="small" sx={{ width: "100px" }}>
                   <Select
                     labelId="demo-simple-select-label"

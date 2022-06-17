@@ -10,7 +10,7 @@ export default function SearchBar() {
       sx={{
         background: "white",
         border: "none",
-        width: { xs: "100%", sm: "25vw", md: "25vw", lg: "25vw", xl: "25vw" },
+        width: { xs: "100%", sm: "28vw", md: "28vw", lg: "28vw", xl: "28vw" },
       }}
       InputProps={{
         endAdornment: (
