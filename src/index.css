@@ -9,6 +9,7 @@ body {
   color: #2e266f;
   height: 100vh;
   width: 100%;
+  min-width: fit-content;
 }
 
 .text-red {
