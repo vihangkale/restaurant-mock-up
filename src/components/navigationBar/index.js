@@ -20,10 +20,11 @@ const NavigationBar = () => {
     <Grow in={true} timeout={2500} mountOnEnter unmountOnExit>
       <AppBar
         position="static"
+        style={{ width: "100%", minWidth: "100vw" }}
         sx={{
           color: "#2e266f",
           boxShadow: "none",
-          px: { xs: 1, sm: 5, md: 5, lg: 6, xl: 6 },
+          px: { xs: 0, md: 9 },
           background: "linear-gradient(to right, #fff5ec 75%, #fe043c 25%)",
         }}
       >
@@ -35,7 +36,7 @@ const NavigationBar = () => {
               className="text-red"
               title="header"
               sx={{
-                mr: 2,
+                // mr: 2,
                 display: "flex",
                 fontWeight: 900,
                 textDecoration: "none",
@@ -47,7 +48,7 @@ const NavigationBar = () => {
               sx={{
                 flexGrow: 1,
                 display: "flex",
-                px: { xs: 0, sm: 0, md: 5, lg: 5, xl: 5 },
+                px: { xs: 0 },
               }}
             >
               {pages.map((page) => (
@@ -56,8 +57,8 @@ const NavigationBar = () => {
                   key={page}
                   //onClick={handleCloseNavMenu}
                   sx={{
-                    my: 2,
-                    mx: { xs: 1, sm: 1, md: 4, lg: 4, xl: 4 },
+                    // my: 2,
+                    mx: { md: 4, lg: 4, xl: 4 },
                     display: "block",
                     textTransform: "none",
                     color: "#2e266f",

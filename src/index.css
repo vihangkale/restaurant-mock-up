@@ -25,7 +25,9 @@ body {
 .locationTagImage {
   animation: spin 2000ms linear;
 }
-
+.profileDropdown svg {
+  fill: #fff;
+}
 @keyframes spin {
   from {
     transform: rotateY(0deg);
