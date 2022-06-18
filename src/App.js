@@ -16,18 +16,15 @@ function App() {
     <div className="App">
       <NavigationBar />
       <Container
-        maxWidth="xl"
-        maxWidth="lg"
-        mt={30}
-        sx={{ height: "calc(100vh - 53px)" }}
+        disableGutters
+        sx={{ height: "calc(100vh - 69.5px)", px: 9 }}
+        maxWidth={false}
       >
         <Grid
           container
-          spacing={2}
           alignItems="center"
-          justifyContent="center"
-          spacing={{ xs: 10 }}
-          sx={{ height: "inherit" }}
+          justifyCenter="center"
+          height="inherit"
         >
           <Slide
             direction="right"
@@ -36,7 +33,14 @@ function App() {
             mountOnEnter
             unmountOnExit
           >
-            <Grid item xs={12} sm={6} lg={6} xl={6}>
+            <Grid
+              item
+              xs={12}
+              sm={6}
+              lg={6}
+              xl={6}
+              sx={{ paddingTop: " 0 !important" }}
+            >
               <Stack
                 // spacing={{ xs: 1, sm: 2, md: 4 }}
                 sx={{ height: "inherit" }}
@@ -67,7 +71,21 @@ function App() {
             mountOnEnter
             unmountOnExit
           >
-            <Grid item xs={12} sm={6} lg={6} xl={6}>
+            <Grid
+              item
+              xs={12}
+              sm={6}
+              lg={6}
+              xl={6}
+              justifyContent="center"
+              alignItems="center"
+              sx={{
+                backgroundImage: "radial-gradient(#cfc7bf 7%, transparent 7%)",
+                backgroundPosition: "0 0, 50px 50px",
+                backgroundSize: "30px 30px",
+                paddingTop: " 0 !important",
+              }}
+            >
               <Stack
                 // spacing={{ xs: 1, sm: 2, md: 4 }}
                 alignItems="flex-end"
@@ -107,7 +125,6 @@ function App() {
       <Tag
         name="Hydrabad"
         icon={<LocationOnIcon sx={{ color: "#fff !important" }} />}
-        sx={{ fontSize: "1.2rem !important" }}
       />
     </div>
   );
