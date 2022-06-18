@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -7,37 +6,18 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
-import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import SimpleBadge from "../../components/badge";
-import Fade from "@mui/material/Fade";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import Stack from "@mui/material/Stack";
+import Grow from "@mui/material/Grow";
 
 const pages = ["Menu One", "Menu Two", "Menu Three", "Menu Four"];
 
 const NavigationBar = () => {
-  // const [anchorElNav, setAnchorElNav] = useState(null);
-  // const [anchorElUser, setAnchorElUser] = useState(null);
-
-  // const handleOpenNavMenu = (event) => {
-  //   setAnchorElNav(event.currentTarget);
-  // };
-  // const handleOpenUserMenu = (event) => {
-  //   setAnchorElUser(event.currentTarget);
-  // };
-
-  // const handleCloseNavMenu = () => {
-  //   setAnchorElNav(null);
-  // };
-
-  // const handleCloseUserMenu = () => {
-  //   setAnchorElUser(null);
-  // };
-
   return (
-    <Fade in={true} timeout={2500}>
+    <Grow in={true} timeout={2500} mountOnEnter unmountOnExit>
       <AppBar
         position="static"
         sx={{
@@ -63,7 +43,6 @@ const NavigationBar = () => {
             >
               eatiz
             </Typography>
-
             <Box
               sx={{
                 flexGrow: 1,
@@ -92,25 +71,19 @@ const NavigationBar = () => {
 
             <Box sx={{ flexGrow: 0 }}>
               <Stack direction="row" spacing={0.1}>
-                {/* <Tooltip title="Profile"> */}
                 <SimpleBadge>
-                  <IconButton
-                    //onClick={handleOpenUserMenu}
-                    sx={{ p: 0 }}
-                  >
+                  <IconButton sx={{ p: 0 }}>
                     <Avatar
                       alt="Remy Sharp"
                       src="https://source.unsplash.com/random/?profile"
                     />
                   </IconButton>
                 </SimpleBadge>
-                {/* </Tooltip> */}
                 <FormControl size="small" sx={{ width: "100px" }}>
                   <Select
                     labelId="demo-simple-select-label"
                     id="demo-simple-select"
                     value="user"
-                    // onChange={handleChange}
                   >
                     <MenuItem value="user">User</MenuItem>
                     <MenuItem value={20}>Twenty</MenuItem>
@@ -122,7 +95,7 @@ const NavigationBar = () => {
           </Toolbar>
         </Container>
       </AppBar>
-    </Fade>
+    </Grow>
   );
 };
 export default NavigationBar;
