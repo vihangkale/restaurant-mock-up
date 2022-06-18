@@ -1,15 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
 body {
   margin: 0;
   font-family: "Noto Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #fff5ec;
   background: linear-gradient(to right, #fff5ec 75%, #fe043c 25%);
+
+  /* background: linear-gradient(to right, #fff5ec 75%, #fe043c 25%); */
   color: #2e266f;
   height: 100vh;
   width: 100%;
-  min-width: fit-content;
 }
 
 .text-red {
@@ -22,12 +23,12 @@ body {
   background: #fff5ec !important;
 }
 .locationTagImage {
-  animation: spin 1000ms linear;
+  animation: spin 2000ms linear;
 }
 
 @keyframes spin {
   from {
-    transform: rotateZ(0deg);
+    transform: rotateY(0deg);
   }
   to {
     transform: rotateY(360deg);
