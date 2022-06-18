@@ -3,8 +3,17 @@ import Stack from "@mui/material/Stack";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import Slide from "@mui/material/Slide";
+import { useEffect, useState } from "react";
 
 export default function ImageComponent() {
+  const [image, setImage] = useState("");
+
+  useEffect(() => {
+    let img = new Image();
+    img = "https://source.unsplash.com/random/?food";
+    setImage(img);
+  }, []);
+
   return (
     <Slide direction="left" timeout={2500} in={true} mountOnEnter unmountOnExit>
       <Stack alignItems="flex-end" sx={{ height: "inherit" }}>
@@ -13,17 +22,17 @@ export default function ImageComponent() {
           fullWidth
           sx={{
             height: {
-              xs: "50vh",
-              sm: "60vh",
-              md: "60vh",
+              xs: "35vh",
+              sm: "50vh",
+              md: "50vh",
               lg: "60vh",
               xl: "60vh",
             },
-            width: "100%",
+            width: { xs: "100%", md: "90%" },
             objectFit: "cover",
           }}
           alt="The house from the offer."
-          src="https://source.unsplash.com/random/?food"
+          src={image}
         />
         <Stack
           direction="row"
