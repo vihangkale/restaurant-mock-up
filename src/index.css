@@ -5,7 +5,7 @@ body {
   font-family: "Noto Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(to right, #fff5ec 75%, #fe043c 25%);
+  background: #fff5ec;
 
   /* background: linear-gradient(to right, #fff5ec 75%, #fe043c 25%); */
   color: #2e266f;
