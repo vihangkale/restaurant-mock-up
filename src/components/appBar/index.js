@@ -19,7 +19,7 @@ import Grow from "@mui/material/Grow";
 const pages = ["Menu One", "Menu Two", "Menu Three", "Menu Four"];
 const settings = ["User", "User 2", "User 3"];
 
-const NavigationBar = () => {
+const NavigationBar = ({ initialPageAnimation }) => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
   const [profileSelect, setProfileSelection] = React.useState("user");
@@ -43,7 +43,7 @@ const NavigationBar = () => {
   };
 
   return (
-    <Grow in={true} timeout={2500} mountOnEnter unmountOnExit>
+    <Grow in={initialPageAnimation} timeout={2500} mountOnEnter unmountOnExit>
       <AppBar
         position="static"
         sx={{

@@ -4,7 +4,12 @@ import TextField from "@mui/material/TextField";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Slide from "@mui/material/Slide";
 
-export default function EmailBar({ placeholder, buttonRadius, width }) {
+export default function EmailBar({
+  placeholder,
+  buttonRadius,
+  width,
+  notifiedPageAnimation,
+}) {
   return (
     <TextField
       placeholder={placeholder}
@@ -25,7 +30,7 @@ export default function EmailBar({ placeholder, buttonRadius, width }) {
                 enter: "linear",
                 exit: "linear",
               }}
-              in={true}
+              in={notifiedPageAnimation}
               mountOnEnter
               unmountOnExit
             >

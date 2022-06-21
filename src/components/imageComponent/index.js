@@ -5,7 +5,7 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import Slide from "@mui/material/Slide";
 import { useEffect, useState } from "react";
 
-export default function ImageComponent() {
+export default function ImageComponent({ initialPageAnimation }) {
   const [image, setImage] = useState("");
 
   useEffect(() => {
@@ -15,7 +15,13 @@ export default function ImageComponent() {
   }, []);
 
   return (
-    <Slide direction="left" timeout={2500} in={true} mountOnEnter unmountOnExit>
+    <Slide
+      direction="left"
+      timeout={2500}
+      in={initialPageAnimation}
+      mountOnEnter
+      unmountOnExit
+    >
       <Stack alignItems="flex-end" sx={{ height: "inherit" }}>
         <Box
           component="img"

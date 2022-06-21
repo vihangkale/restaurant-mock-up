@@ -2,7 +2,12 @@ import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
 import Grow from "@mui/material/Grow";
 
-export default function BorderHeader2({ topText, bottomText, description }) {
+export default function BorderHeader2({
+  topText,
+  bottomText,
+  description,
+  mobilePageAnimation,
+}) {
   return (
     <Stack
       px={{ xs: 1, sm: 10 }}
@@ -12,9 +17,9 @@ export default function BorderHeader2({ topText, bottomText, description }) {
       alignItems="center"
     >
       <Grow
-        in={true}
+        in={mobilePageAnimation}
         style={{ transformOrigin: "0 0 0" }}
-        {...(true ? { timeout: 500 } : {})}
+        {...(mobilePageAnimation ? { timeout: 500 } : {})}
       >
         <Typography
           variant="h5"
@@ -33,9 +38,9 @@ export default function BorderHeader2({ topText, bottomText, description }) {
         </Typography>
       </Grow>
       <Grow
-        in={true}
+        in={mobilePageAnimation}
         style={{ transformOrigin: "0 0 0" }}
-        {...(true ? { timeout: 1000 } : {})}
+        {...(mobilePageAnimation ? { timeout: 1000 } : {})}
       >
         <Typography variant="body2" sx={{ width: "50%" }}>
           {description}
@@ -47,9 +52,9 @@ export default function BorderHeader2({ topText, bottomText, description }) {
         sx={{ width: "fit-content" }}
       >
         <Grow
-          in={true}
+          in={mobilePageAnimation}
           style={{ transformOrigin: "0 0 0" }}
-          {...(true ? { timeout: 2000 } : {})}
+          {...(mobilePageAnimation ? { timeout: 2000 } : {})}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -335,9 +340,9 @@ export default function BorderHeader2({ topText, bottomText, description }) {
           </svg>
         </Grow>
         <Grow
-          in={true}
+          in={mobilePageAnimation}
           style={{ transformOrigin: "0 0 0" }}
-          {...(true ? { timeout: 3000 } : {})}
+          {...(mobilePageAnimation ? { timeout: 3000 } : {})}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

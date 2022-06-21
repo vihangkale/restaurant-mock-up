@@ -23,10 +23,20 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import Zoom from "@mui/material/Zoom";
-import Collapse from "@mui/material/Collapse";
+import Fade from "@mui/material/Fade";
 import Grow from "@mui/material/Grow";
+import { useInView } from "react-intersection-observer";
 
 function App() {
+  const { ref: myRef, inView: animation } = useInView();
+  const { ref: initialPage, inView: initialPageAnimation } = useInView();
+  const { ref: foodCardCarousalPage, inView: foodCardCarousalPageAnimation } =
+    useInView();
+  const { ref: foodcard, inView: foodCardAnimation } = useInView();
+  const { ref: foodcard2, inView: foodCardAnimation2 } = useInView();
+  const { ref: mobilePage, inView: mobilePageAnimation } = useInView();
+  const { ref: notifiedPage, inView: notifiedPageAnimation } = useInView();
+
   let foodData = [
     {
       name: "Fire Water",
@@ -88,12 +98,13 @@ function App() {
   ];
   return (
     <div className="App">
-      <NavigationBar />
+      <NavigationBar initialPageAnimation={initialPageAnimation} />
       <Container
+        ref={initialPage}
         disableGutters
         sx={{
           px: { xs: 3, md: 9 },
-          py: { xs: 3, md: 9 },
+          py: { xs: 3, md: 12 },
           background: "linear-gradient(to right, #fff5ec 75%, #fe043c 25%)",
           position: "relative",
         }}
@@ -114,7 +125,7 @@ function App() {
                 enter: "linear",
                 exit: "linear",
               }}
-              in={true}
+              in={initialPageAnimation}
               mountOnEnter
               unmountOnExit
             >
@@ -139,7 +150,7 @@ function App() {
               backgroundSize: "30px 30px",
             }}
           >
-            <ImageComponent />
+            <ImageComponent initialPageAnimation={initialPageAnimation} />
           </Grid>
         </Grid>
         <Tag
@@ -152,28 +163,38 @@ function App() {
           }
         />
       </Container>
-      <Container disableGutters maxWidth={false} sx={{ mt: 2 }}>
-        <Collapse in={true} timeout={2000}>
-          <BorderHeader
-            topText="some top restaurant for"
-            bottomText="dining out!"
-            description=" Lorem Ipsum is simply dummy text of the printing and typesetting
+      <Container
+        ref={foodCardCarousalPage}
+        disableGutters
+        maxWidth={false}
+        sx={{ mt: 2 }}
+      >
+        <BorderHeader
+          topText="some top restaurant for"
+          bottomText="dining out!"
+          description=" Lorem Ipsum is simply dummy text of the printing and typesetting
         industry. Lorem Ipsum has been the industry's standard dummy text ever
         since the 1500s, when an unknown printer took a galley of type and
         scrambled it to make a type specimen book."
-          />
-        </Collapse>
+        />
         <Grid container spacing={1} sx={{ my: 15 }}>
           {foodData &&
-            foodData.map((food) => (
-              <Grid item xs={12} sm={5} md={3} lg={3} xl={3} key={food.name}>
-                <FoodCard
-                  key={food.name}
-                  name={food.name}
-                  description={food.description}
-                  location={food.location}
-                />
-              </Grid>
+            foodData.map((food, index) => (
+              <Fade
+                in={foodCardCarousalPageAnimation}
+                timeout={index === 1 ? 2000 : 1000}
+                mountOnEnter
+                unmountOnExit
+              >
+                <Grid item xs={12} sm={5} md={3} lg={3} xl={3} key={food.name}>
+                  <FoodCard
+                    key={food.name}
+                    name={food.name}
+                    description={food.description}
+                    location={food.location}
+                  />
+                </Grid>
+              </Fade>
             ))}
 
           <Grid item xs={12} sm={2} md={6} lg={6} xl={6}>
@@ -222,8 +243,10 @@ function App() {
           py: 20,
         }}
       >
-        <Zoom in={true}>
+        <Zoom in={animation}>
           <Paper
+            ref={myRef}
+            className="advanceBooking"
             sx={{
               height: "60vh",
               width: { xs: "50%", sm: "60%", md: "60%", lg: "50%" },
@@ -307,6 +330,7 @@ function App() {
         <Grid
           container
           spacing={1}
+          ref={foodcard}
           sx={{
             mt: 10,
             backgroundImage: "radial-gradient(#cfc7bf 10%, transparent 10%)",
@@ -327,7 +351,7 @@ function App() {
                   enter: "linear",
                   exit: "linear",
                 }}
-                in={true}
+                in={foodCardAnimation}
                 mountOnEnter
                 unmountOnExit
               >
@@ -353,7 +377,7 @@ function App() {
                   enter: "linear",
                   exit: "linear",
                 }}
-                in={true}
+                in={foodCardAnimation}
                 mountOnEnter
                 unmountOnExit
               >
@@ -406,7 +430,7 @@ function App() {
                   enter: "linear",
                   exit: "linear",
                 }}
-                in={true}
+                in={foodCardAnimation}
                 mountOnEnter
                 unmountOnExit
               >
@@ -460,7 +484,7 @@ function App() {
                   enter: "linear",
                   exit: "linear",
                 }}
-                in={true}
+                in={foodCardAnimation}
                 mountOnEnter
                 unmountOnExit
               >
@@ -482,7 +506,12 @@ function App() {
               <Grid />
             </Grid>
           </Grid>
-          <Grow in={true} timeout={4000} mountOnEnter unmountOnExit>
+          <Grow
+            in={foodCardAnimation}
+            timeout={4000}
+            mountOnEnter
+            unmountOnExit
+          >
             <Grid xs={12} sm={4} md={4} lg={4} xl={4}>
               <FoodCard2 padding={5} height="400px" />
             </Grid>
@@ -505,6 +534,7 @@ function App() {
 
         <Grid
           container
+          ref={foodcard2}
           spacing={5}
           sx={{ mt: 3, px: { xs: 0, sm: 10, md: 10, lg: 25 } }}
         >
@@ -531,7 +561,7 @@ function App() {
                   enter: "linear",
                   exit: "linear",
                 }}
-                in={true}
+                in={foodCardAnimation2}
                 mountOnEnter
                 unmountOnExit
               >
@@ -552,6 +582,7 @@ function App() {
         disableGutters
         maxWidth={false}
         sx={{ background: "#ffedde", py: 5 }}
+        ref={mobilePage}
       >
         <Grid container>
           <Grid item xs={12} xm={6} md={6} lg={6} xl={6}>
@@ -563,6 +594,7 @@ function App() {
         industry. Lorem Ipsum has been the industry's standard dummy text ever
         since the 1500s, when an unknown printer took a galley of type and
         scrambled it to make a type specimen book."
+                mobilePageAnimation={mobilePageAnimation}
               />
             </Stack>
           </Grid>
@@ -573,7 +605,7 @@ function App() {
               enter: "linear",
               exit: "linear",
             }}
-            in={true}
+            in={mobilePageAnimation}
             mountOnEnter
             unmountOnExit
           >
@@ -718,6 +750,7 @@ function App() {
       <Container
         maxWidth={false}
         disableGutters
+        ref={notifiedPage}
         sx={{
           textAlign: "center",
           py: 15,
@@ -725,7 +758,7 @@ function App() {
         }}
       >
         <Stack spacing={3} alignItems="center" sx={{ mb: 10 }}>
-          <Typography variant="h5" sx={{ color: "#2e266f" }}>
+          <Typography variant="h4" sx={{ color: "#2e266f" }}>
             Get notified <br />
             about new amazing products
           </Typography>
@@ -736,7 +769,10 @@ function App() {
             since
           </Typography>
         </Stack>
-        <EmailBar placeholder="Email" />
+        <EmailBar
+          placeholder="Email"
+          notifiedPageAnimation={notifiedPageAnimation}
+        />
         <Stack
           direction="row"
           spacing={3}
