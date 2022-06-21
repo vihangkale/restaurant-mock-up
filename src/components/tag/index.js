@@ -18,7 +18,7 @@ export default function Tag({ name, icon }) {
         size="large"
         sx={{
           position: "absolute",
-          bottom: { xs: "0", sm: "70px", md: "110px" },
+          bottom: { xs: "3%", sm: "0", md: "10%" },
           left: "0",
           background: "#f30d39",
           color: "#fff",

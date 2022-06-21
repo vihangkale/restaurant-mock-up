@@ -2,7 +2,7 @@
 
 body {
   margin: 0;
-  font-family: "Noto Sans", sans-serif;
+  font-family: "Noto Sans", "Roboto", "Helvetica", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: #fff5ec;
@@ -13,6 +13,9 @@ body {
   width: 100%;
 }
 
+#root {
+  font-family: "Noto Sans", sans-serif;
+}
 .text-red {
   color: #fe043c;
 }
@@ -36,3 +39,69 @@ body {
     transform: rotateY(360deg);
   }
 }
+.rotateZAnimation {
+  animation: spin2 2000ms linear;
+}
+@keyframes spin2 {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
+}
+
+.glowAnimation {
+  width: "fit-content";
+  animation: glow 1s infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 10px -10px #aef4af;
+  }
+  to {
+    box-shadow: 0 0 10px 10px #aef4af;
+  }
+}
+.foodLeftArrow {
+  position: absolute;
+  top: 40%;
+  right: 30px;
+  transform: rotate(180deg);
+}
+
+.foodRightArrow {
+  position: absolute;
+  top: 40%;
+  left: -26px;
+}
+.pos-relative {
+  position: relative;
+}
+@media screen and (max-width: 1024px) {
+  .foodLeftArrow {
+    position: absolute;
+    top: 40%;
+    right: -20px;
+    transform: rotate(180deg);
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .foodLeftArrow {
+    position: absolute;
+    top: 40%;
+    right: 8%;
+    transform: rotate(180deg);
+  }
+}
+/* 
+@media screen and (min-width: 1920px) {
+  .foodLeftArrow {
+    position: absolute;
+    top: 40%;
+    right: 30%;
+    transform: rotate(180deg);
+  }
+} */
