@@ -2,14 +2,14 @@ import Button from "@mui/material/Button";
 import InputAdornment from "@mui/material/InputAdornment";
 import TextField from "@mui/material/TextField";
 
-export default function SearchBar({ placeholder, buttonRadius, width }) {
+export default function SearchBar({ placeholder, buttonRadius }) {
   return (
     <TextField
+      fullWidth
       id="input-with-icon-textfield"
       placeholder={placeholder}
       style={{
         margin: "5px 0",
-        width: width ? width : "100%",
         border: 0,
       }}
       sx={{

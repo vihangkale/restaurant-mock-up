@@ -256,12 +256,12 @@ function App() {
             className="advanceBooking"
             sx={{
               height: "60vh",
-              width: { xs: "50%", sm: "60%", md: "60%", lg: "50%" },
+              width: { xs: "60%", sm: "60%", md: "60%", lg: "50%" },
               display: "flex",
               flexDirection: "column",
               justifyContent: "space-evenly",
               alignItems: "center",
-              px: { xs: 10, sm: 10, md: 10, lg: 20 },
+              px: { xs: 5, sm: 10, md: 10, lg: 20 },
             }}
           >
             <div>
