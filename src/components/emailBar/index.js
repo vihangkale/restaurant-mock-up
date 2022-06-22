@@ -25,7 +25,7 @@ export default function EmailBar({
           <InputAdornment position="end">
             <Slide
               direction="right"
-              timeout={2000}
+              timeout={1500}
               easing={{
                 enter: "linear",
                 exit: "linear",

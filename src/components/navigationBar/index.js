@@ -17,7 +17,7 @@ const pages = ["Menu One", "Menu Two", "Menu Three", "Menu Four"];
 
 const NavigationBar = () => {
   return (
-    <Grow in={true} timeout={2500} mountOnEnter unmountOnExit>
+    <Grow in={true} timeout={1500} mountOnEnter unmountOnExit>
       <AppBar
         position="static"
         style={{ width: "100%", minWidth: "100vw" }}
