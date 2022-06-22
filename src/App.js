@@ -120,7 +120,7 @@ function App() {
           <Grid item xs={12} sm={6} lg={6} xl={6}>
             <Slide
               direction="right"
-              timeout={2500}
+              timeout={1500}
               easing={{
                 enter: "linear",
                 exit: "linear",
@@ -206,7 +206,7 @@ function App() {
             >
               <Stack direction="row" alignItems="center" spacing={0}>
                 <svg
-                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns="http://www.w3.org/1500/svg"
                   height="15"
                   width="48"
                   fill="#fe043c"
@@ -358,7 +358,7 @@ function App() {
             <Grid container alignItems="center" justifyContent="center">
               <Slide
                 direction="left"
-                timeout={2500}
+                timeout={1500}
                 easing={{
                   enter: "linear",
                   exit: "linear",
@@ -371,7 +371,7 @@ function App() {
                   <div style={{ position: "relative" }}>
                     <FoodCard2 imageOnly={true} />
                     <svg
-                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns="http://www.w3.org/1500/svg"
                       height="48"
                       width="48"
                       fill="#fe043c"
@@ -384,7 +384,7 @@ function App() {
               </Slide>
               <Slide
                 direction="down"
-                timeout={2500}
+                timeout={1500}
                 easing={{
                   enter: "linear",
                   exit: "linear",
@@ -437,7 +437,7 @@ function App() {
               </Slide>
               <Slide
                 direction="up"
-                timeout={2500}
+                timeout={1500}
                 easing={{
                   enter: "linear",
                   exit: "linear",
@@ -491,7 +491,7 @@ function App() {
               </Slide>
               <Slide
                 direction="right"
-                timeout={2500}
+                timeout={1500}
                 easing={{
                   enter: "linear",
                   exit: "linear",
@@ -504,7 +504,7 @@ function App() {
                   <div style={{ position: "relative" }}>
                     <FoodCard2 imageOnly={true} />
                     <svg
-                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns="http://www.w3.org/1500/svg"
                       height="48"
                       width="48"
                       fill="#fe043c"
@@ -578,7 +578,7 @@ function App() {
                     ? "left"
                     : null
                 }
-                timeout={2500}
+                timeout={1500}
                 easing={{
                   enter: "linear",
                   exit: "linear",
@@ -622,7 +622,7 @@ function App() {
           </Grid>
           <Slide
             direction="left"
-            timeout={2500}
+            timeout={1500}
             easing={{
               enter: "linear",
               exit: "linear",
@@ -634,7 +634,7 @@ function App() {
             <Grid item xs={12} xm={6} md={6} lg={6} xl={6}>
               <svg
                 className="rotateZAnimation"
-                xmlns="http://www.w3.org/2000/svg"
+                xmlns="http://www.w3.org/1500/svg"
                 xmlnsXlink="http://www.w3.org/1999/xlink"
                 width="100%"
                 height="500"
@@ -819,7 +819,7 @@ function App() {
           <InstagramIcon sx={{ color: "#000" }} />
           <svg
             fill="#000000"
-            xmlns="http://www.w3.org/2000/svg"
+            xmlns="http://www.w3.org/1500/svg"
             viewBox="0 0 50 50"
             width="24px"
             height="24px"

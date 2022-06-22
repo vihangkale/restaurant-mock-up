@@ -17,7 +17,7 @@ export default function ImageComponent({ initialPageAnimation }) {
   return (
     <Slide
       direction="left"
-      timeout={2500}
+      timeout={1500}
       in={initialPageAnimation}
       mountOnEnter
       unmountOnExit
