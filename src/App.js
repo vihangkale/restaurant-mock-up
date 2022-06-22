@@ -182,7 +182,7 @@ function App() {
             foodData.map((food, index) => (
               <Fade
                 in={foodCardCarousalPageAnimation}
-                timeout={index === 1 ? 2000 : 1000}
+                timeout={index === 1 ? 4000 : 3000}
                 mountOnEnter
                 unmountOnExit
               >
@@ -226,9 +226,16 @@ function App() {
                   <ArrowForwardIosIcon sx={{ color: "#fff" }} />
                 </span>
               </Stack>
-              <Typography color="#fe043c" variant="body1">
-                see more
-              </Typography>
+              <Fade
+                in={foodCardCarousalPageAnimation}
+                timeout={3000}
+                mountOnEnter
+                unmountOnExit
+              >
+                <Typography color="#fe043c" variant="body1">
+                  see more
+                </Typography>
+              </Fade>
             </Stack>
           </Grid>
         </Grid>
@@ -318,7 +325,11 @@ function App() {
           </Paper>
         </Zoom>
       </Container>
-      <Container maxWidth={false} disableGutters sx={{ py: 20 }}>
+      <Container
+        maxWidth={false}
+        disableGutters
+        sx={{ py: 20, position: "relative" }}
+      >
         <BorderHeader
           topText="Our"
           bottomText="Services"
@@ -371,7 +382,7 @@ function App() {
                 </Grid>
               </Slide>
               <Slide
-                direction="top"
+                direction="left"
                 timeout={2500}
                 easing={{
                   enter: "linear",
@@ -424,7 +435,7 @@ function App() {
                 </Grid>
               </Slide>
               <Slide
-                direction="up"
+                direction="right"
                 timeout={2500}
                 easing={{
                   enter: "linear",
@@ -518,7 +529,11 @@ function App() {
           </Grow>
         </Grid>
       </Container>
-      <Container maxWidth={false} disableGutters sx={{ py: 20 }}>
+      <Container
+        maxWidth={false}
+        disableGutters
+        sx={{ py: 20, position: "relative" }}
+      >
         <Stack spacing={1} alignItems="center">
           <Typography
             variant="h5"
@@ -536,20 +551,25 @@ function App() {
           container
           ref={foodcard2}
           spacing={5}
-          sx={{ mt: 3, px: { xs: 0, sm: 10, md: 10, lg: 25 } }}
+          sx={{
+            mt: 3,
+            px: { xs: 0, sm: 10, md: 10, lg: 25 },
+            position: "relative",
+          }}
         >
           {foodData2 &&
             foodData2.map((food, index) => (
               <Slide
+                sx={{ position: "relative" }}
                 direction={
                   index === 0
                     ? "right"
                     : index === 1
-                    ? "down"
+                    ? "left"
                     : index === 2
                     ? "left"
                     : index === 4
-                    ? "up"
+                    ? "right"
                     : index === 3
                     ? "right"
                     : index === 5
