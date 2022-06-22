@@ -18,14 +18,14 @@ export default function EmailBar({
         border: 0,
         width: 350,
         position: "relative",
-        // borderRadius: "32px 32px 32px 32px",
+        overflow: "hidden",
       }}
       InputProps={{
         endAdornment: (
           <InputAdornment position="end">
             <Slide
               direction="right"
-              timeout={2500}
+              timeout={2000}
               easing={{
                 enter: "linear",
                 exit: "linear",

@@ -349,6 +349,7 @@ function App() {
             backgroundSize: "30px 30px",
             py: 10,
             px: { xs: 0, sm: 5, md: 10, lg: 20 },
+            overflow: "hidden",
           }}
           alignItems="center"
           justifyContent="center"
@@ -382,7 +383,7 @@ function App() {
                 </Grid>
               </Slide>
               <Slide
-                direction="left"
+                direction="down"
                 timeout={2500}
                 easing={{
                   enter: "linear",
@@ -435,7 +436,7 @@ function App() {
                 </Grid>
               </Slide>
               <Slide
-                direction="right"
+                direction="up"
                 timeout={2500}
                 easing={{
                   enter: "linear",
@@ -555,6 +556,7 @@ function App() {
             mt: 3,
             px: { xs: 0, sm: 10, md: 10, lg: 25 },
             position: "relative",
+            overflow: "hidden",
           }}
         >
           {foodData2 &&
@@ -565,11 +567,11 @@ function App() {
                   index === 0
                     ? "right"
                     : index === 1
-                    ? "left"
+                    ? "down"
                     : index === 2
                     ? "left"
                     : index === 4
-                    ? "right"
+                    ? "up"
                     : index === 3
                     ? "right"
                     : index === 5
